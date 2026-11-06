@@ -119,13 +119,3 @@ VALUES (1, '52998224725', '01');
 
 INSERT INTO monitora
 VALUES (1, '11144477735', '02');
-
-SELECT * FROM Alunos;
-SELECT * FROM Cursos;
-SELECT * FROM Turmas;
-SELECT * FROM Atividades;
-SELECT * FROM Inscricao;
-SELECT * FROM Alocado;
-SELECT * FROM Participa;
-SELECT * FROM monitora;
-SELECT * FROM Pagamentos;
