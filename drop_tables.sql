@@ -1,0 +1,12 @@
+DROP TABLE monitora;
+DROP TABLE Participa;
+DROP TABLE Alocado;
+DROP TABLE Inscricao;
+DROP TABLE Atividades;
+DROP TABLE Turmas;
+DROP TABLE Instrutores;
+DROP TABLE Cursos;
+DROP TABLE Pagamentos;
+DROP TABLE Alunos;
+DROP TABLE Telefones;
+DROP TABLE Enderecos;
