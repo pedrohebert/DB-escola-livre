@@ -1,6 +1,6 @@
 # documento compartilhado:
 
-https://docs.google.com/document/d/1d5B3XjHfyE3h4n3rCEtXcU9ea-v1NeBhrCjtcTnKKQQ/edit?usp=sharing
+https://docs.google.com/document/d/1N8fVItlQHlc3d8A3M6tPlp3m2mhZFzzxIxvzMg-CK-E/edit?tab=t.0
 > [!NOTE]
 > entrar com email educacional
 
