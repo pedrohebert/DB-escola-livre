@@ -105,5 +105,7 @@ Turno, Carga horária total.
 
 ---
 # to-do
-- [ ] procedure: criar matricula de aluno  
-- [ ] procedure: criar matricula de instrutores
+- [ ] `procedure`: criar matricula de aluno  
+- [ ] `procedure`: criar matricula de instrutores
+- [ ] `trigger`: pre-insert alunos, impedir valor externos de matricular e colocar a matricula gerada pela a procedure
+- [ ] `trigger`: pre-insert instrutores, impedir valor externos de matricular e colocar a matricula gerada pela a procedure
