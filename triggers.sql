@@ -10,6 +10,9 @@ CREATE EXCEPTION EX_CARGA_HORARIA_MAXIMA_EXTRAPOLADA
 CREATE EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO
 	'A atualização do status não segue a ordem correta';
 
+CREATE EXCEPTION EX_UPDATE_DATA_DE_PAGAMENTO
+	'Não enviar data de pagamento';
+
 SET TERM !;
 
 CREATE TRIGGER validar_insert_alocada
@@ -81,5 +84,21 @@ BEGIN
 		EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO;
 
 END!
+
+CREATE TRIGGER validar_data_de_pagamento_pagamentos
+FOR pagamentos
+BEFORE UPDATE
+AS
+BEGIN
+	IF (NEW.data_de_pagamento IS NOT NULL)
+	THEN
+		EXCEPTION EX_UPDATE_DATA_DE_PAGAMENTO;
+
+	IF (NEW.status = 'pago')
+	THEN
+		NEW.data_de_pagamento = CURRENT_TIMESTAMP;
+
+END!
+
 
 SET TERM ;!
