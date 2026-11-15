@@ -50,9 +50,10 @@ inserir `data_de_pagamento` se o novo status for `pago`.
 ---
 
 # procedures 
-- [x] feito 
 
 ### alocar aluno
+- [ ] feito 
+
 -**recebe**: matricula, cpf, ID da turma.
 verifica de o aluno tem o status de pago.
 verifica se a turma tem vaga.
@@ -61,6 +62,8 @@ e verifica se o aluno esta alocado em outra turma.
 ---
 
 ### registrar_pagamento 
+- [ ] feito 
+
 -**recebe**: id da inscrição ou (matrícula + curso), forma de pagamento e data.
 atualiza o status do pagamento para o pago e preenche a data de pagamento.
 dispensa se o aluno já estiver alocado e cria o registro do pagamento.
@@ -68,6 +71,8 @@ dispensa se o aluno já estiver alocado e cria o registro do pagamento.
 ---
 
 ### matricula_do_aluno
+- [ ] feito 
+
 -**recebe**: nome, sexo, CPF, e-mail, data de nascimento.
 gera a matrícula do aluno.
 cria o registro de endereço.
@@ -79,6 +84,7 @@ valida se o CPF já existe nao permitir duplicidade.
 ---
 
 ### Situação_Aluno_Turma
+- [ ] feito 
 
 Presença>75%
 Nota>6 
@@ -90,22 +96,27 @@ Se tiver isso o certificado poderá ser emitido
 
 ### atividades da turma 
 - [ ] feito  
+
 cada linha contem:  
 - descrição, data, carga horaria,  quantidades de alunos presente, quantidades de alunos totais, taxa de presença , media da nota dos alunos presentes. 
 ---
 ### alunos prontos para ser alocados
 - [ ] feito  
+
 cada linha contem:  
 - nome do aluno,  CPF e a matricula, curso inscrito, data de pagamento, o valor da inscrição (ou o total caso seja possível se inscrever em mais) 
 mostrar somente alunos que possuem statos de pagamento 'pago' e não estão em uma turma.
 ---
 ### pagamentos
 - [ ] feito  
+
 cada linha contem:  
 vê quais alunos pagaram, quais ainda devem pagar, o curso deles, a data de vencimento e os dias em atraso,
+
 ---
 ### turma vaga
 - [ ] feito  
+
 ID e data de início da turma,   Curso,  Capacidade máxima,  Quantidade de alunos já alocados , Vagas restantes,  
 Turno, Carga horária total.  
 
