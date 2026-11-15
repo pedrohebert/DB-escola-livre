@@ -11,16 +11,21 @@ https://docs.google.com/document/d/1N8fVItlQHlc3d8A3M6tPlp3m2mhZFzzxIxvzMg-CK-E/
 
 ### alocado 
 - [x] feito  
+
 pre-insert.  
 verificar se o pagamento respectivo está com status pago e se a turma está com vagas disponíveis.  
+
 ---
 ### atividade
 - [x] feito  
+
 pre-insert.  
 verificar se a soma das cargas horarias das atividades da turma superam a carga horaria máxima da turma, bloquear se sim. 
+
 ---
 ### pagamento
 - [x] feito  
+
 pre-update. 
 verificar a se o status está sendo atualizado e se a ordem de progresso está sendo respeitada.  
 
@@ -44,6 +49,7 @@ verificar a se o status está sendo atualizado e se a ordem de progresso está s
 ---
 ### pagamento
 - [x] feito  
+
 pre-update.  
 validar data_de_pagamento impedir que a data venha de fora e inserir caso o novo status esteja correto.
 inserir `data_de_pagamento` se o novo status for `pago`.  
@@ -53,6 +59,7 @@ inserir `data_de_pagamento` se o novo status for `pago`.
 
 ### alocar aluno
 - [ ] feito  
+
 recebe: matricula, cpf, ID da turma  
 
 verifica de o aluno tem o status de pago  
@@ -62,6 +69,7 @@ e verifica se o aluno esta alocado em outra turma
 ---
 ### registrar_pagamento 
 - [ ] feito  
+
 recebe: id da inscrição ou (matrícula + curso), forma de pagamento e data.  
 atualiza o status do pagamento para o pago e preenche a data de pagamento.  
 dispensa se o aluno já estiver alocado e cria o registro do pagamento.  
@@ -71,22 +79,27 @@ dispensa se o aluno já estiver alocado e cria o registro do pagamento.
 
 ### atividades da turma 
 - [ ] feito  
+
 cada linha contem:  
 - descrição, data, carga horaria,  quantidades de alunos presente, quantidades de alunos totais, taxa de presença , media da nota dos alunos presentes. 
 ---
 ### alunos prontos para ser alocados
 - [ ] feito  
+
 cada linha contem:  
 - nome do aluno,  CPF e a matricula, curso inscrito, data de pagamento, o valor da inscrição (ou o total caso seja possível se inscrever em mais) 
 mostrar somente alunos que possuem statos de pagamento 'pago' e não estão em uma turma.
 ---
 ### pagamentos
 - [ ] feito  
+
 cada linha contem:  
 vê quais alunos pagaram, quais ainda devem pagar, o curso deles, a data de vencimento e os dias em atraso,
+
 ---
 ### turma vaga
-- [ ] feito  
+- [ ] feito
+  
 ID e data de início da turma,   Curso,  Capacidade máxima,  Quantidade de alunos já alocados , Vagas restantes,  
 Turno, Carga horária total.  
 
