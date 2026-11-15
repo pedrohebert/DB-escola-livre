@@ -75,3 +75,7 @@ vê quais alunos pagaram, quais ainda devem pagar, o curso deles, a data de venc
 ### turma vaga
 ID e data de início da turma,   Curso,  Capacidade máxima,  Quantidade de alunos já alocados , Vagas restantes,  
 Turno, Carga horária total
+
+# to-do
+- [ ] procedure: criar matricula de aluno
+- [ ] procedure: criar matricula de instrutores
