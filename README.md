@@ -50,13 +50,13 @@ inserir `data_de_pagamento` se o novo status for `pago`.
 ---
 
 # procedures 
+- [x] feito 
 
 ### alocar aluno
-recebe: matricula, cpf, ID da turma
-
-verifica de o aluno tem o status de pago 
-verifica se a turma tem vaga 
-e verifica se o aluno esta alocado em outra turma
+recebe: matricula, cpf, ID da turma.
+verifica de o aluno tem o status de pago.
+verifica se a turma tem vaga.
+e verifica se o aluno esta alocado em outra turma.
 ---
 
 ### registrar_pagamento 
@@ -66,23 +66,20 @@ dispensa se o aluno já estiver alocado e cria o registro do pagamento.
 ---
 
 ### matricula_do_aluno
-recebe: nome, sexo, CPF, e-mail, data de nascimento
-gera a matrícula do aluno
+recebe: nome, sexo, CPF, e-mail, data de nascimento.
+gera a matrícula do aluno.
 cria o registro de endereço.
 cria o registro de telefone.
 insere o aluno na tabela Alunos já vinculando o endereço e o telefone.
 Retorna a matrícula gerada.
-valida se o CPF já existe nao permitir duplicidade
+valida se o CPF já existe nao permitir duplicidade.
 ---
 
 ### Situação_Aluno_Turma
 Algumas das regras de negócio é acompanhar a presença dos alunos e e  desempenho para emitir o certificado , então adotei esses critérios 
-
 Presença>75%
 Nota>6 
-
 Se tiver isso o certificado poderá ser emitido
-
 ---
 
 # views
