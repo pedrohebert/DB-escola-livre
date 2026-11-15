@@ -101,7 +101,7 @@ cada linha contem:
 - descrição, data, carga horaria,  quantidades de alunos presente, quantidades de alunos totais, taxa de presença , media da nota dos alunos presentes. 
 ---
 ### alunos prontos para ser alocados
-- [ ] feito  
+- [x] feito  
 
 cada linha contem:  
 - nome do aluno,  CPF e a matricula, curso inscrito, data de pagamento, o valor da inscrição (ou o total caso seja possível se inscrever em mais) 
