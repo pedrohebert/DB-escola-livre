@@ -7,6 +7,9 @@ CREATE EXCEPTION EX_PAGAMENTO_PENDENTE
 CREATE EXCEPTION EX_CARGA_HORARIA_MAXIMA_EXTRAPOLADA
 	'A carga horaria da turma foi extrapolada';
 
+CREATE EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO
+	'A atualização do status não segue a ordem correta';
+
 SET TERM !;
 
 CREATE TRIGGER validar_insert_alocada
@@ -57,6 +60,26 @@ BEGIN
 	IF (:sum_carga + NEW.carga_horaria > :carga_max)
 	THEN
 		EXCEPTION EX_CARGA_HORARIA_MAXIMA_EXTRAPOLADA;
+END!
+
+CREATE TRIGGER validar_update_status_pagamento
+FOR pagamentos
+BEFORE UPDATE
+AS
+BEGIN
+
+	IF (OLD.status = 'pendente' AND NEW.status = 'pago')
+	THEN
+		EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO;
+
+	IF (OLD.status = 'pago')
+	THEN
+		EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO;
+
+	IF (OLD.status = 'vencido' AND NEW.status = 'pago')
+	THEN
+		EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO;
+
 END!
 
 SET TERM ;!
