@@ -4,8 +4,8 @@ DROP TRIGGER validar_carga_horaria_atividade;
 DROP TRIGGER validar_update_status_pagamento;
 DROP TRIGGER validar_data_de_pagamento_pagamentos;
 DROP TRIGGER VALIDAR_INSERT_PAGAMENTO;
-DROP TRIGGER validar_insert_aluno;
-DROP TRIGGER validar_insert_instrutores;
+--DROP TRIGGER validar_insert_aluno;
+--DROP TRIGGER validar_insert_instrutores;
 
 -- drop EXCEPTIONS
 DROP EXCEPTION EX_TURMA_LOTADA;

@@ -146,6 +146,7 @@ END!
 --- alunos
 
 -- t-07
+/*
 CREATE OR ALTER TRIGGER validar_insert_aluno
 FOR alunos
 BEFORE INSERT
@@ -176,6 +177,6 @@ BEGIN
 	THEN
 		NEW.matricula = '1';
 END!
-
+*/
 
 SET TERM ;!
