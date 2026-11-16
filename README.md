@@ -9,17 +9,17 @@ https://docs.google.com/document/d/1N8fVItlQHlc3d8A3M6tPlp3m2mhZFzzxIxvzMg-CK-E/
 ---
 # triggers
 
-### alocado 
+### t-01 alocado 
 - [x] feito  
 pre-insert.  
 verificar se o pagamento respectivo está com status pago e se a turma está com vagas disponíveis.  
 ---
-### atividade
+### t-02 atividade
 - [x] feito  
 pre-insert.  
 verificar se a soma das cargas horarias das atividades da turma superam a carga horaria máxima da turma, bloquear se sim. 
 ---
-### pagamento
+### t-03 pagamento
 - [x] feito  
 pre-update. 
 verificar a se o status está sendo atualizado e se a ordem de progresso está sendo respeitada.  
@@ -42,7 +42,7 @@ verificar a se o status está sendo atualizado e se a ordem de progresso está s
 - `vencido → processando`: pagamento iniciado após reabertura.
 
 ---
-### pagamento
+### t-04 pagamento
 - [x] feito  
 pre-update.  
 validar data_de_pagamento impedir que a data venha de fora e inserir caso o novo status esteja correto.
@@ -51,7 +51,7 @@ inserir `data_de_pagamento` se o novo status for `pago`.
 
 # procedures 
 
-### alocar aluno
+### p-01 alocar aluno
 - [ ] feito 
 
 -**recebe**: matricula, cpf, ID da turma.
@@ -61,7 +61,7 @@ e verifica se o aluno esta alocado em outra turma.
 
 ---
 
-### registrar_pagamento 
+### p-02 registrar_pagamento 
 - [ ] feito 
 
 -**recebe**: id da inscrição ou (matrícula + curso), forma de pagamento e data.
@@ -70,7 +70,7 @@ dispensa se o aluno já estiver alocado e cria o registro do pagamento.
 
 ---
 
-### matricula_do_aluno
+### p-03 matricula_do_aluno
 - [ ] feito 
 
 -**recebe**: nome, sexo, CPF, e-mail, data de nascimento.
@@ -83,7 +83,7 @@ valida se o CPF já existe nao permitir duplicidade.
 
 ---
 
-### Situação_Aluno_Turma
+### p-04 Situação_Aluno_Turma
 - [ ] feito 
 
 Presença>75%
@@ -94,14 +94,14 @@ Se tiver isso o certificado poderá ser emitido
 
 # views
 
-### atividades da turma 
+### v-01 atividades da turma 
 - [x] feito  
 
 cada linha contem:  
 - id_da_atividade, id_da_turma descrição, data, carga horaria,  quantidades de alunos presente, quantidades de alunos totais, taxa de presença , media da nota dos alunos presentes. 
 
 ---
-### alunos prontos para ser alocados
+### v-02 alunos prontos para ser alocados
 - [x] feito  
 
 cada linha contem:  
@@ -109,14 +109,17 @@ cada linha contem:
 mostrar somente alunos que possuem statos de pagamento 'pago' e não estão em uma turma.
 
 ---
-### pagamentos
+### v-03 situação de pagamentos
 - [ ] feito  
 
+mostra:
+quais alunos pagaram, quais ainda devem pagar, o curso deles, a data de vencimento e os dias em atraso.
+
 cada linha contem:  
-vê quais alunos pagaram, quais ainda devem pagar, o curso deles, a data de vencimento e os dias em atraso,
+id, nome do aluno, curso inscrito
 
 ---
-### turma vaga
+### v-04 turma vaga
 - [ ] feito  
 
 ID e data de início da turma,   Curso,  Capacidade máxima,  Quantidade de alunos já alocados , Vagas restantes,  
