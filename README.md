@@ -6,6 +6,24 @@ https://docs.google.com/document/d/1N8fVItlQHlc3d8A3M6tPlp3m2mhZFzzxIxvzMg-CK-E/
 
 # estrutura de arquivos:
 ![](imagens/image.png)
+
+---
+# regras de negocio
+
+1. todo aluno deve possuir um endereço, até 2 telefones e um e-mail.
+2. todo instrutor deve possuis até 2 telefones e um e-mail.
+3. todo pagamento deve está vinculado a um aluno.
+4. o valor do pagamento é definido na inscrição.
+5. toda turma deve ter um curso e um instrutor responsável. 
+6. toda turma não deve ter mais de um determinado alunos alocados.
+7. toda turma tem uma carga horaria total associada.
+8. toda atividade deve ter uma quantidade de carga horaria abatida da carga horaria da turma.
+9. a soma das carga horaria da atividade não deve ser superior a a carga horaria da turma. 
+10. toda atividade deve atribuir uma frequência e uma nota individual para cada aluno.
+11. a nota da atividade deve ser de 0 a 10. 
+12. um aluno só poderá resgatar um certificado se a sua media de nota for igual ou superior a 7.0 e a frequência for maior que 70% e a carga horaria da turma foi completamente abatida.
+13. um aluno somente poderá ser alocado em uma turma se o estados de pagamento respectivo estiver com status "pago"
+
 ---
 # triggers
 
@@ -49,6 +67,12 @@ validar data_de_pagamento impedir que a data venha de fora e inserir caso o novo
 inserir `data_de_pagamento` se o novo status for `pago`.  
 ---
 
+### t-05 pagamento 
+- [ ] feito  
+pre-insert
+verificar se o aluno esta incrito em um curso antes inserir o registro de pagamento
+
+---
 # procedures 
 
 ### p-01 alocar aluno
