@@ -92,6 +92,16 @@ pre-insert.
 verificar se estado do insert está em um estado valido.
 todo pagamento deve ser criado como pendente.
 
+### t-07 alunos 
+- [x] feito  
+pre-insert.  
+impedir valor externos de matricular e colocar a matricula gerada pela a procedure
+
+### t-08 instrutores
+- [x] feito  
+pre-insert  
+impedir valor externos de matricular e colocar a matricula gerada pela a procedure
+
 ---
 # procedures 
 
@@ -208,7 +218,9 @@ Identifica os alunos que atendem aos critérios de média, frequência e cumprim
 # to-do
 - [ ] `procedure`: criar matricula de aluno  
 - [ ] `procedure`: criar matricula de instrutores
-- [ ] `trigger`: pre-insert alunos, impedir valor externos de matricular e colocar a matricula gerada pela a procedure
-- [ ] `trigger`: pre-insert instrutores, impedir valor externos de matricular e colocar a matricula gerada pela a procedure
+- [x] `trigger`: pre-insert alunos, impedir valor externos de matricular e colocar a matricula gerada pela a procedure
+- [x] `trigger`: pre-insert instrutores, impedir valor externos de matricular e colocar a matricula gerada pela a procedure
 - [ ] `indices`: decidir quais campos criar indices
 - [ ] `consultas`: decidir quais consultas criar
+- [ ] `trigger `: t-07, ligar o gerador de matricula do aluno
+- [ ] `trigger `: t-08, ligar o gerador de matricula do instrutores

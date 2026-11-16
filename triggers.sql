@@ -20,7 +20,10 @@ CREATE OR ALTER EXCEPTION EX_STATUS_INICIAL_INVALIDO
 	'Um pagamento deve ser criado com status pendente.';
 
 CREATE OR ALTER EXCEPTION EX_ALUNO_SEM_INSCRICAO
-'O aluno precisa possuir uma inscricao para gerar um pagamento.';
+	'O aluno precisa possuir uma inscricao para gerar um pagamento.';
+
+CREATE OR ALTER EXCEPTION EX_MATRICULA_INVALIDA
+	'Não enviar a matricula';
 
 SET TERM !;
 
@@ -113,8 +116,7 @@ END!
 -- t-06 e t-05
 CREATE OR ALTER TRIGGER VALIDAR_INSERT_PAGAMENTO
 FOR PAGAMENTOS
-ACTIVE BEFORE INSERT
-POSITION 0
+BEFORE INSERT
 AS
 DECLARE VARIABLE ALUNO_INSCRITO INTEGER;
 BEGIN
@@ -134,5 +136,40 @@ BEGIN
         EXCEPTION EX_ALUNO_SEM_INSCRICAO;
 
 END!
+
+--- alunos
+
+-- t-07
+CREATE OR ALTER TRIGGER validar_insert_aluno
+FOR alunos
+BEFORE INSERT
+AS
+BEGIN
+	IF (NEW.matricula IS NOT NULL)
+	THEN
+		EXCEPTION EX_MATRICULA_INVALIDA;
+
+	IF (NEW.matricula IS NULL)
+	THEN
+		NEW.matricula = '1';
+END!
+
+--- instrutores
+
+-- t-08
+CREATE OR ALTER TRIGGER validar_insert_instrutores
+FOR instrutores
+BEFORE INSERT
+AS
+BEGIN
+	IF (NEW.matricula IS NOT NULL)
+	THEN
+		EXCEPTION EX_MATRICULA_INVALIDA;
+
+	IF (NEW.matricula IS NULL)
+	THEN
+		NEW.matricula = '1';
+END!
+
 
 SET TERM ;!
