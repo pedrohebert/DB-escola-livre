@@ -23,11 +23,11 @@ WHERE p.status = 'pago'
 CREATE OR ALTER VIEW tividades_das_turmas
 AS
 SELECT
-	a.id,
+	a.id AS id_da_atividade,
 	a.data_da_atividade,
 	a.descricao,
 	a.carga_horaria,
-	t.id AS turma_id,
+	t.id AS id_da_turma,
 	(
 		SELECT count(*) FROM PARTICIPA p
 		WHERE p.fk_atividade = a.fk_turma
