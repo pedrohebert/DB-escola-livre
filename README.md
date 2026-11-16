@@ -152,23 +152,8 @@ cada linha contem:
 mostrar somente alunos que possuem statos de pagamento 'pago' e não estão em uma turma.
 
 ---
-### v-03 situação de pagamentos
-- [ ] feito  
 
-mostra:
-quais alunos pagaram, quais ainda devem pagar, o curso deles, a data de vencimento e os dias em atraso.
 
-cada linha contem:  
-id, nome do aluno, curso inscrito
-
----
-### v-04 turma vaga
-- [ ] feito  
-
-ID e data de início da turma,   Curso,  Capacidade máxima,  Quantidade de alunos já alocados , Vagas restantes,  
-Turno, Carga horária total.  
-
----
 
 # indeces 
 
@@ -176,6 +161,19 @@ Turno, Carga horária total.
 
 # consultas
 
+### c-01 turma vaga
+- [ ] feito  
+
+ID e data de início da turma,   Curso,  Capacidade máxima,  Quantidade de alunos já alocados , Vagas restantes,  
+Turno, Carga horária total.  
+
+### c-02 situação de pagamentos
+- [ ] feito  
+
+mostra:
+quais alunos pagaram, quais ainda devem pagar, o curso deles, a data de vencimento e os dias em atraso.
+
+---
 ---
 
 # transações
