@@ -35,8 +35,8 @@ https://docs.google.com/document/d/1N8fVItlQHlc3d8A3M6tPlp3m2mhZFzzxIxvzMg-CK-E/
 20. toda atividade deve atribuir uma frequência e uma nota individual para cada aluno.
 21. a nota da atividade deve ser de 0 a 10. 
 22. um aluno só poderá resgatar um certificado se a sua media de nota for igual ou superior a 7.0 e a frequência for maior que 70% e a carga horaria da turma foi completamente abatida.
-23. um aluno somente poderá ser alocado em uma turma se o estados de pagamento respectivo estiver com status "pago"
-24. todo aluno deve está incrito em um curso
+23. um aluno somente poderá ser alocado em uma turma se o estados de pagamento respectivo estiver com status "pago".
+24. todo aluno deve está incrito em um curso.
 
 ---
 # triggers
