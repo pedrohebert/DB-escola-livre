@@ -40,14 +40,14 @@ CREATE TABLE Pagamentos(
 	forma_de_pagamento varchar(20) NOT NULL,
 	status varchar(20) DEFAULT 'pendente' NOT NULL,
 	data_de_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	data_de_venciemento TIMESTAMP NOT NULL,
+	data_de_vencimento TIMESTAMP NOT NULL,
 	data_de_pagamento TIMESTAMP,
 	fk_aluno_matricula CHAR(8) NOT NULL,
 	fk_aluno_CPF CHAR(11) NOT NULL,
 
 	CONSTRAINT pk_pagamento PRIMARY KEY (id),
 
-	CONSTRAINT check_data_de_vencimento CHECK(data_de_venciemento > data_de_criacao),
+	CONSTRAINT check_data_de_vencimento CHECK(data_de_vencimento > data_de_criacao),
 
 	CONSTRAINT check_forma_de_pagamento CHECK(forma_de_pagamento IN ('pix', 'debito', 'credito')),
 
