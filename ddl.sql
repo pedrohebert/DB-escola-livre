@@ -148,7 +148,7 @@ CREATE TABLE Participa(
 	fk_aluno_CPF CHAR(11) NOT NULL,
 	fk_atividade INTEGER NOT NULL,
 	frequencia BOOLEAN DEFAULT FALSE NOT NULL,
-	nota DECIMAL,
+	nota DECIMAL NOT NULL,
 
 	CONSTRAINT pk_participa PRIMARY KEY (fk_atividade, fk_aluno_matricula, fk_aluno_CPF),
 
