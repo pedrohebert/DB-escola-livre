@@ -20,7 +20,7 @@ WHERE p.status = 'pago'
 ;
 
 
-CREATE OR ALTER VIEW tividades_das_turmas
+CREATE OR ALTER VIEW atividades_das_turmas
 AS
 SELECT
 	a.id AS id_da_atividade,
