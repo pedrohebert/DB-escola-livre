@@ -168,6 +168,14 @@ mostrar somente alunos que possuem statos de pagamento 'pago' e não estão em u
 
 # indeces 
 
+# i-01 indices de pagamentos por aluno 
+
+indexar as chaves trangeiras de alunos em pagamentos para acelerar as buscas pelo pagamento do aluno.
+
+# i-012 indices de alocado por aluno 
+
+indexar as chaves trangeiras de alunos em alocado para acelerar as buscas das turmas que o aluno faz parte.
+
 ---
 
 # Consultas
