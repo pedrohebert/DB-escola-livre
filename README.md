@@ -159,22 +159,49 @@ mostrar somente alunos que possuem statos de pagamento 'pago' e não estão em u
 
 ---
 
-# consultas
+# Consultas
 
-### c-01 turma vaga
-- [ ] feito  
+Consultas
 
-ID e data de início da turma,   Curso,  Capacidade máxima,  Quantidade de alunos já alocados , Vagas restantes,  
-Turno, Carga horária total.  
+* Alunos, cursos e turmas
 
-### c-02 situação de pagamentos
-- [ ] feito  
+Lista os alunos e os respectivos cursos e turmas em que estão alocados.
 
-mostra:
-quais alunos pagaram, quais ainda devem pagar, o curso deles, a data de vencimento e os dias em atraso.
+* Turmas e instrutores
 
----
----
+Apresenta as turmas, seus cursos e os instrutores responsáveis.
+
+* Frequência e notas dos alunos
+
+Consulta a frequência e as notas dos alunos em cada atividade.
+
+* Turmas com média igual ou superior a 7
+
+Identifica as turmas cuja média geral das notas é igual ou superior a 7.
+
+* Alunos com notas acima da média geral
+
+Identifica os alunos com notas superiores à média de todas as notas registradas.
+
+* Situação dos pagamentos
+
+Apresenta a situação dos pagamentos, suas formas de pagamento, datas de vencimento e dias de atraso.
+
+* Atividades com carga horária acima da média da turma
+
+Identifica as atividades cuja carga horária é superior à média das atividades da mesma turma.
+
+* Vagas disponíveis nas turmas
+
+Apresenta a capacidade máxima, a quantidade de alunos alocados e as vagas restantes.
+
+* Carga horária das atividades por turma
+
+Apresenta a quantidade de atividades, a carga horária total cadastrada e as horas restantes de cada turma.
+
+* Alunos aptos a receber certificado
+
+Identifica os alunos que atendem aos critérios de média, frequência e cumprimento da carga horária para certificação.
 
 # transações
 
