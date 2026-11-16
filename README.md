@@ -36,7 +36,7 @@ https://docs.google.com/document/d/1N8fVItlQHlc3d8A3M6tPlp3m2mhZFzzxIxvzMg-CK-E/
 21. a nota da atividade deve ser de 0 a 10. 
 22. um aluno só poderá resgatar um certificado se a sua media de nota for igual ou superior a 7.0 e a frequência for maior que 70% e a carga horaria da turma foi completamente abatida.
 23. um aluno somente poderá ser alocado em uma turma se o estados de pagamento respectivo estiver com status "pago".
-24. todo aluno deve está incrito em um curso.
+24. um pagamento so pode ser criado se o aluno estiver inscrito 
 
 ---
 # triggers
@@ -83,8 +83,13 @@ inserir `data_de_pagamento` se o novo status for `pago`.
 
 ### t-05 pagamento 
 - [ ] feito  
-pre-insert
+pre-insert.  
 verificar se o aluno esta incrito em um curso antes inserir o registro de pagamento
+
+### t-06 pagamento
+- [ ] feito  
+pre-insert.  
+verificar se estado do insert está em um estado valido.
 
 ---
 # procedures 
@@ -147,23 +152,8 @@ cada linha contem:
 mostrar somente alunos que possuem statos de pagamento 'pago' e não estão em uma turma.
 
 ---
-### v-03 situação de pagamentos
-- [ ] feito  
 
-mostra:
-quais alunos pagaram, quais ainda devem pagar, o curso deles, a data de vencimento e os dias em atraso.
 
-cada linha contem:  
-id, nome do aluno, curso inscrito
-
----
-### v-04 turma vaga
-- [ ] feito  
-
-ID e data de início da turma,   Curso,  Capacidade máxima,  Quantidade de alunos já alocados , Vagas restantes,  
-Turno, Carga horária total.  
-
----
 
 # indeces 
 
@@ -171,6 +161,19 @@ Turno, Carga horária total.
 
 # consultas
 
+### c-01 turma vaga
+- [ ] feito  
+
+ID e data de início da turma,   Curso,  Capacidade máxima,  Quantidade de alunos já alocados , Vagas restantes,  
+Turno, Carga horária total.  
+
+### c-02 situação de pagamentos
+- [ ] feito  
+
+mostra:
+quais alunos pagaram, quais ainda devem pagar, o curso deles, a data de vencimento e os dias em atraso.
+
+---
 ---
 
 # transações
