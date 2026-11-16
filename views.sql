@@ -9,13 +9,13 @@ SELECT
 	i.valor
 FROM ALUNOS a
 JOIN Inscricao i
-ON  i.fk_aluno_CPF = a.CPF
+	ON  i.fk_aluno_CPF = a.CPF
 AND i.fk_aluno_matricula = a.matricula
 JOIN CURSOS c
-ON c.id = i.fk_curso
+	ON c.id = i.fk_curso
 JOIN PAGAMENTOS p
-ON  p.fk_aluno_CPF = a.CPF
-AND p.fk_aluno_matricula = a.matricula
+	ON  p.fk_aluno_CPF = a.CPF
+	AND p.fk_aluno_matricula = a.matricula
 WHERE p.status = 'pago'
 ;
 
@@ -30,7 +30,7 @@ SELECT
 	t.id AS id_da_turma,
 	(
 		SELECT count(*) FROM PARTICIPA p
-		WHERE p.fk_atividade = a.fk_turma
+		WHERE p.fk_atividade = a.id
 		AND p.frequencia = TRUE
 	) AS quant_alunos_presentes,
 	(
@@ -41,7 +41,7 @@ SELECT
         (
             SELECT COUNT(*)
             FROM PARTICIPA p
-            WHERE p.fk_atividade = a.fk_turma
+            WHERE p.fk_atividade = a.id
               AND p.frequencia = TRUE
         ) AS DECIMAL(10,2)
     )
