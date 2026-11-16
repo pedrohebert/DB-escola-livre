@@ -216,11 +216,11 @@ Identifica os alunos que atendem aos critérios de média, frequência e cumprim
 
 ---
 # to-do
-- [ ] `procedure`: criar matricula de aluno  
-- [ ] `procedure`: criar matricula de instrutores
+- [x] `procedure`: criar matricula de aluno  
+- [x] `procedure`: criar matricula de instrutores
 - [x] `trigger`: pre-insert alunos, impedir valor externos de matricular e colocar a matricula gerada pela a procedure
 - [x] `trigger`: pre-insert instrutores, impedir valor externos de matricular e colocar a matricula gerada pela a procedure
 - [ ] `indices`: decidir quais campos criar indices
 - [ ] `consultas`: decidir quais consultas criar
-- [ ] `trigger `: t-07, ligar o gerador de matricula do aluno
-- [ ] `trigger `: t-08, ligar o gerador de matricula do instrutores
+- [x] `trigger `: t-07, ligar o gerador de matricula do aluno
+- [x] `trigger `: t-08, ligar o gerador de matricula do instrutores
