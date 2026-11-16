@@ -13,6 +13,15 @@ CREATE OR ALTER EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO
 CREATE OR ALTER EXCEPTION EX_UPDATE_DATA_DE_PAGAMENTO
 	'Não enviar data de pagamento';
 
+CREATE OR ALTER EXCEPTION EX_ALUNO_NAO_INSCRITO
+	'O aluno deve esta inscrito em curso primeiro';
+
+CREATE OR ALTER EXCEPTION EX_STATUS_INICIAL_INVALIDO
+	'Um pagamento deve ser criado com status pendente.';
+
+CREATE OR ALTER EXCEPTION EX_ALUNO_SEM_INSCRICAO
+'O aluno precisa possuir uma inscricao para gerar um pagamento.';
+
 SET TERM !;
 
 CREATE OR ALTER TRIGGER validar_insert_alocada
@@ -100,5 +109,30 @@ BEGIN
 
 END!
 
+
+-- t-06 e t-05
+CREATE OR ALTER TRIGGER VALIDAR_INSERT_PAGAMENTO
+FOR PAGAMENTOS
+ACTIVE BEFORE INSERT
+POSITION 0
+AS
+DECLARE VARIABLE ALUNO_INSCRITO INTEGER;
+BEGIN
+
+    -- R1: O pagamento deve iniciar como pendente
+    IF (NEW.STATUS IS NULL OR NEW.STATUS <> 'pendente') THEN
+        EXCEPTION EX_STATUS_INICIAL_INVALIDO;
+
+    -- R2: O aluno deve possuir uma inscrição
+    SELECT COUNT(*)
+    FROM INSCRICAO i
+    WHERE i.fk_aluno_CPF = NEW.fk_aluno_CPF
+      AND i.fk_aluno_matricula = NEW.fk_aluno_matricula
+    INTO :ALUNO_INSCRITO;
+
+    IF (ALUNO_INSCRITO = 0) THEN
+        EXCEPTION EX_ALUNO_SEM_INSCRICAO;
+
+END!
 
 SET TERM ;!

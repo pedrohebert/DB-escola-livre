@@ -82,14 +82,15 @@ inserir `data_de_pagamento` se o novo status for `pago`.
 ---
 
 ### t-05 pagamento 
-- [ ] feito  
+- [x] feito  
 pre-insert.  
 verificar se o aluno esta incrito em um curso antes inserir o registro de pagamento
 
 ### t-06 pagamento
-- [ ] feito  
+- [x] feito  
 pre-insert.  
 verificar se estado do insert está em um estado valido.
+todo pagamento deve ser criado como pendente.
 
 ---
 # procedures 
