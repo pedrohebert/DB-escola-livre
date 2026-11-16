@@ -1,21 +1,21 @@
-CREATE EXCEPTION EX_TURMA_LOTADA
+CREATE OR ALTER EXCEPTION EX_TURMA_LOTADA
     'Não há vagas disponíveis nesta turma';
 
-CREATE EXCEPTION EX_PAGAMENTO_PENDENTE
+CREATE OR ALTER EXCEPTION EX_PAGAMENTO_PENDENTE
     'O aluno não possui pagamento aprovado';
 
-CREATE EXCEPTION EX_CARGA_HORARIA_MAXIMA_EXTRAPOLADA
+CREATE OR ALTER EXCEPTION EX_CARGA_HORARIA_MAXIMA_EXTRAPOLADA
 	'A carga horaria da turma foi extrapolada';
 
-CREATE EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO
+CREATE OR ALTER EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO
 	'A atualização do status não segue a ordem correta';
 
-CREATE EXCEPTION EX_UPDATE_DATA_DE_PAGAMENTO
+CREATE OR ALTER EXCEPTION EX_UPDATE_DATA_DE_PAGAMENTO
 	'Não enviar data de pagamento';
 
 SET TERM !;
 
-CREATE TRIGGER validar_insert_alocada
+CREATE OR ALTER TRIGGER validar_insert_alocada
 FOR alocado
 BEFORE INSERT
 AS
@@ -45,7 +45,7 @@ BEGIN
 		EXCEPTION EX_TURMA_LOTADA;
 END!
 
-CREATE TRIGGER validar_carga_horaria_atividade
+CREATE OR ALTER TRIGGER validar_carga_horaria_atividade
 FOR atividades
 BEFORE INSERT
 AS
@@ -65,7 +65,7 @@ BEGIN
 		EXCEPTION EX_CARGA_HORARIA_MAXIMA_EXTRAPOLADA;
 END!
 
-CREATE TRIGGER validar_update_status_pagamento
+CREATE OR ALTER TRIGGER validar_update_status_pagamento
 FOR pagamentos
 BEFORE UPDATE
 AS
@@ -85,7 +85,7 @@ BEGIN
 
 END!
 
-CREATE TRIGGER validar_data_de_pagamento_pagamentos
+CREATE OR ALTER TRIGGER validar_data_de_pagamento_pagamentos
 FOR pagamentos
 BEFORE UPDATE
 AS
