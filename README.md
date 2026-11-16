@@ -161,8 +161,6 @@ mostrar somente alunos que possuem statos de pagamento 'pago' e não estão em u
 
 # Consultas
 
-Consultas
-
 * Alunos, cursos e turmas
 
 Lista os alunos e os respectivos cursos e turmas em que estão alocados.
