@@ -49,10 +49,10 @@ CREATE OR ALTER TRIGGER validar_carga_horaria_atividade
 FOR atividades
 BEFORE INSERT
 AS
-DECLARE VARIABLE sum_carga integer;
-DECLARE VARIABLE carga_max integer;
+DECLARE VARIABLE sum_carga DECIMAL(10,2);
+DECLARE VARIABLE carga_max DECIMAL(10,2);
 BEGIN
-	SELECT sum(a.carga_horaria) FROM atividades a
+	SELECT (sum(a.carga_horaria),0) FROM atividades a
 	WHERE a.fk_turma = NEW.fk_turma
 	INTO :sum_carga;
 
@@ -70,16 +70,19 @@ FOR pagamentos
 BEFORE UPDATE
 AS
 BEGIN
-
-	IF (OLD.status = 'pendente' AND NEW.status = 'pago')
+	-- Não permite alterar status depois que já está pago
+	IF (OLD.status = 'pago') THEN
+        EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO;
+	-- invalida transações
+	IF (OLD.status = 'pendente' AND NEW.status NOT IN ('processando', 'vencido'))
 	THEN
 		EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO;
 
-	IF (OLD.status = 'pago')
+	IF (OLD.status = 'processando' AND NEW.status NOT IN ('pago', 'vencido'))
 	THEN
 		EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO;
 
-	IF (OLD.status = 'vencido' AND NEW.status = 'pago')
+	IF (OLD.status = 'vencido' AND NEW.status NOT IN ('processando')
 	THEN
 		EXCEPTION EX_UPDATE_STATUS_PAGAMENTO_INVALIDO;
 
@@ -90,13 +93,17 @@ FOR pagamentos
 BEFORE UPDATE
 AS
 BEGIN
-	IF (NEW.data_de_pagamento IS NOT NULL)
-	THEN
-		EXCEPTION EX_UPDATE_DATA_DE_PAGAMENTO;
-
-	IF (NEW.status = 'pago')
-	THEN
-		NEW.data_de_pagamento = CURRENT_TIMESTAMP;
+	-- Se estiver mudando para 'pago', preenche a data automaticamente
+    IF (NEW.status = 'pago' AND OLD.status <> 'pago') THEN
+    BEGIN
+        NEW.data_de_pagamento = CURRENT_TIMESTAMP;
+    END
+	ELSE 
+	BEGIN
+	-- Não permite alterar a data de pagamento manualmente em outros casos
+        IF (NEW.data_de_pagamento IS DISTINCT FROM OLD.data_de_pagamento) THEN
+        	EXCEPTION EX_UPDATE_DATA_DE_PAGAMENTO;
+    END
 
 END!
 
