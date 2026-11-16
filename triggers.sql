@@ -27,6 +27,7 @@ CREATE OR ALTER EXCEPTION EX_MATRICULA_INVALIDA
 
 SET TERM !;
 
+-- t-01
 CREATE OR ALTER TRIGGER validar_insert_alocada
 FOR alocado
 BEFORE INSERT
@@ -57,6 +58,7 @@ BEGIN
 		EXCEPTION EX_TURMA_LOTADA;
 END!
 
+-- t-02
 CREATE OR ALTER TRIGGER validar_carga_horaria_atividade
 FOR atividades
 BEFORE INSERT
@@ -77,6 +79,9 @@ BEGIN
 		EXCEPTION EX_CARGA_HORARIA_MAXIMA_EXTRAPOLADA;
 END!
 
+-- trigger pagamentos
+
+-- t-03
 CREATE OR ALTER TRIGGER validar_update_status_pagamento
 FOR pagamentos
 BEFORE UPDATE
@@ -97,6 +102,7 @@ BEGIN
 
 END!
 
+-- t-04
 CREATE OR ALTER TRIGGER validar_data_de_pagamento_pagamentos
 FOR pagamentos
 BEFORE UPDATE
