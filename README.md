@@ -95,10 +95,11 @@ Se tiver isso o certificado poderá ser emitido
 # views
 
 ### atividades da turma 
-- [ ] feito  
+- [x] feito  
 
 cada linha contem:  
-- descrição, data, carga horaria,  quantidades de alunos presente, quantidades de alunos totais, taxa de presença , media da nota dos alunos presentes. 
+- id_da_atividade, id_da_turma descrição, data, carga horaria,  quantidades de alunos presente, quantidades de alunos totais, taxa de presença , media da nota dos alunos presentes. 
+
 ---
 ### alunos prontos para ser alocados
 - [x] feito  
@@ -106,6 +107,7 @@ cada linha contem:
 cada linha contem:  
 - nome do aluno,  CPF e a matricula, curso inscrito, data de pagamento, o valor da inscrição (ou o total caso seja possível se inscrever em mais) 
 mostrar somente alunos que possuem statos de pagamento 'pago' e não estão em uma turma.
+
 ---
 ### pagamentos
 - [ ] feito  

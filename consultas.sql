@@ -17,3 +17,4 @@ SELECT * FROM Pagamentos;
 -- =========================================================
 
 SELECT * FROM alunos_a_ser_alocados;
+SELECT * FROM tividades_das_turmas;
