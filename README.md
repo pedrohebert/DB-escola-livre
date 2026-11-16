@@ -10,19 +10,33 @@ https://docs.google.com/document/d/1N8fVItlQHlc3d8A3M6tPlp3m2mhZFzzxIxvzMg-CK-E/
 ---
 # regras de negocio
 
-1. todo aluno deve possuir um endereço, até 2 telefones e um e-mail.
-2. todo instrutor deve possuis até 2 telefones e um e-mail.
-3. todo pagamento deve está vinculado a um aluno.
-4. o valor do pagamento é definido na inscrição.
-5. toda turma deve ter um curso e um instrutor responsável. 
-6. toda turma não deve ter mais de um determinado alunos alocados.
-7. toda turma tem uma carga horaria total associada.
-8. toda atividade deve ter uma quantidade de carga horaria abatida da carga horaria da turma.
-9. a soma das carga horaria da atividade não deve ser superior a a carga horaria da turma. 
-10. toda atividade deve atribuir uma frequência e uma nota individual para cada aluno.
-11. a nota da atividade deve ser de 0 a 10. 
-12. um aluno só poderá resgatar um certificado se a sua media de nota for igual ou superior a 7.0 e a frequência for maior que 70% e a carga horaria da turma foi completamente abatida.
-13. um aluno somente poderá ser alocado em uma turma se o estados de pagamento respectivo estiver com status "pago"
+### do professor
+1. Um mesmo curso poderá ser oferecido em várias turmas em períodos diferentes.
+2. Cada turma deverá possuir período de realização e capacidade máxima de participantes.
+3. Uma pessoa poderá participar de diferentes cursos ao longo do tempo.
+4. Uma turma poderá contar com um ou mais instrutores.
+5. Um instrutor poderá participar de diferentes turmas, inclusive de cursos distintos.
+6. As atividades realizadas durante o curso poderão ocorrer em datas diferentes.
+7. A escola deseja acompanhar a presença dos participantes nas atividades.
+8. A conclusão poderá depender de critérios como frequência mínima ou desempenho.
+9. Quando os critérios forem atendidos, poderá ser emitido certificado.
+10. A inscrição poderá ter valor próprio e o pagamento poderá possuir diferentes situações.
+
+### proprias
+11. todo aluno deve possuir um endereço, até 2 telefones e um e-mail.
+12. todo instrutor deve possuis até 2 telefones e um e-mail.
+13. todo pagamento deve está vinculado a um aluno.
+14. o valor do pagamento é definido na inscrição.
+15. toda turma deve ter um curso e um instrutor responsável. 
+16. toda turma não deve ter mais de um determinado numero de alunos alocados.
+17. toda turma tem uma carga horaria total associada.
+18. toda atividade deve ter uma quantidade de carga horaria abatida da carga horaria da turma.
+19. a soma das carga horaria da atividade não deve ser superior a a carga horaria da turma. 
+20. toda atividade deve atribuir uma frequência e uma nota individual para cada aluno.
+21. a nota da atividade deve ser de 0 a 10. 
+22. um aluno só poderá resgatar um certificado se a sua media de nota for igual ou superior a 7.0 e a frequência for maior que 70% e a carga horaria da turma foi completamente abatida.
+23. um aluno somente poderá ser alocado em uma turma se o estados de pagamento respectivo estiver com status "pago"
+24. todo aluno deve está incrito em um curso
 
 ---
 # triggers
